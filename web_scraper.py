@@ -1,3 +1,4 @@
+import bs4.element
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -11,11 +12,11 @@ def scraper() -> None:
         response: requests.Response = requests.get(f'https://www.lottozahlenonline.de/statistik/beide-spieltage/lottozahlen-archiv.php?j={number}#lottozahlen-archive')
         soup: BeautifulSoup = BeautifulSoup(response.text, 'html.parser')
 
-        all_drawings: soup.ResultSet = soup.find_all('div', class_='zahlensuche_rahmen')
+        all_drawings: bs4.element.ResultSet = soup.find_all('div', class_='zahlensuche_rahmen')
 
         for drawing in all_drawings:
             date: str = drawing.find('time', class_='zahlensuche_datum').text.strip()
-            numbers: list[str] = drawing.find_all('div', class_='zahlensuche_zahl')
+            numbers: bs4.element.ResultSet = drawing.find_all('div', class_='zahlensuche_zahl')
             numbers: list[int] = [int(number.text) for number in numbers]
             super_number: str or int = drawing.find('div', class_='zahlensuche_zz').text
             if super_number == '':
