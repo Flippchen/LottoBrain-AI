@@ -26,7 +26,7 @@ def scraper() -> None:
 
     df: pd.DataFrame = pd.DataFrame(all_numbers, columns=['date', 'number_1', 'number_2', 'number_3', 'number_4', 'number_5', 'number_6', 'super_number'])
     df['date'] = pd.to_datetime(df['date'], format='%d.%m.%Y')
-    df.to_csv('lotto_numbers2.csv', index=False)
+    df.to_csv('lotto_numbers.csv', index=False)
 
 
 if __name__ == '__main__':
