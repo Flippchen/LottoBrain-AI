@@ -5,6 +5,10 @@ import pandas as pd
 
 
 def scraper() -> None:
+    """
+    Scrapes the lotto numbers from the website www.lottozahlenonline.de/statistik/beide-spieltage/lottozahlen-archiv.php and saves them in a csv file.
+    :return: None
+    """
     all_numbers: list[list[str, int]] = []
     years: list = [i for i in range(1955, 2023 + 1)]
     for number in years:
