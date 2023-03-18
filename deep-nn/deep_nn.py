@@ -21,7 +21,7 @@ def create_keras_model():
     model = Sequential()
     model.add(Dense(64, input_dim=6, activation='relu'))
     model.add(Dense(32, activation='relu'))
-    model.add(Dense(1))
+    model.add(Dense(6))  # Modify the output layer to have 6 output units
     model.compile(loss='mean_squared_error', optimizer='adam')
     return model
 
@@ -34,3 +34,15 @@ keras_model.fit(X_train, y_train)
 keras_predictions = keras_model.predict(X_test)
 keras_mse = mean_squared_error(y_test, keras_predictions)
 print("KerasRegressor Mean Squared Error:", keras_mse)
+
+
+# Predict all numbers with XGBoost
+X = data[['date']]
+y = data.drop(columns=['date'])
+
+X['year'] = X['date'].str[:4].astype(int)
+X['month'] = X['date'].str[5:7].astype(int)
+X['day'] = X['date'].str[8:10].astype(int)
+X = X.drop(columns=['date'])
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
