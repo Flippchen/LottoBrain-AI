@@ -19,7 +19,7 @@ def generate_numbers(probabilities: pd.Series, n: int = 6) -> np.ndarray:
 
 
 # Load the data from csv file
-data: pd.DataFrame = pd.read_csv('lotto_numbers.csv')
+data: pd.DataFrame = pd.read_csv('../lotto_numbers.csv')
 # Calculate the frequency of each number
 calc_frequency = number_frequency(data)
 # Calculate the probabilities of each number
