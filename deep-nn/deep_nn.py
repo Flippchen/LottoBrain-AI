@@ -51,9 +51,9 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 def create_keras_model():
     model = Sequential()
-    model.add(Dense(64, input_dim=3, activation='relu'))  # Update input_dim to 3
+    model.add(Dense(64, input_dim=3, activation='relu'))
     model.add(Dense(32, activation='relu'))
-    model.add(Dense(7))  # Modify the output layer to have 7 output units
+    model.add(Dense(7))
     model.compile(loss='mean_squared_error', optimizer='adam')
     return model
 
