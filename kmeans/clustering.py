@@ -28,3 +28,21 @@ predicted_cluster = predict_cluster(kmeans, scaler, new_numbers)
 print(f"The predicted cluster for the numbers {new_numbers} is {predicted_cluster}.")
 
 
+pca = PCA(n_components=2)
+reduced_data = pca.fit_transform(scaled_data)
+
+
+def plot_clusters(reduced_data, kmeans):
+    plt.figure(figsize=(10, 8))
+    sns.scatterplot(x=reduced_data[:, 0], y=reduced_data[:, 1], hue=kmeans.labels_, palette='viridis', s=50, edgecolor='k', alpha=0.7)
+    sns.scatterplot(x=kmeans.cluster_centers_[:, 0], y=kmeans.cluster_centers_[:, 1], s=200, color='red', marker='x', linewidth=2, label='Cluster Centers')
+    plt.xlabel('PCA 1')
+    plt.ylabel('PCA 2')
+    plt.title('K-means Clustering of Lottery Numbers')
+    plt.legend()
+    fig = plt.gcf()
+    plt.show()
+    fig.savefig('images/lotto_clusters.png')
+
+
+plot_clusters(reduced_data, kmeans)
