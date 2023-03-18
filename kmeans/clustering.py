@@ -23,7 +23,7 @@ def predict_cluster(kmeans, scaler, numbers):
     return cluster[0]
 
 
-new_numbers = [3, 12, 18, 30, 32, 49]  # Replace with your own numbers
+new_numbers = [3, 12, 18, 30, 32, 49]
 predicted_cluster = predict_cluster(kmeans, scaler, new_numbers)
 print(f"The predicted cluster for the numbers {new_numbers} is {predicted_cluster}.")
 
