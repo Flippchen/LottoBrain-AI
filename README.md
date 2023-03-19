@@ -38,3 +38,8 @@ The project includes various models and techniques to explore the dataset and ex
 ## Disclaimer
 This project is intended for educational purposes only. Predicting lottery numbers is not a typical use case for machine learning algorithms, and the models included in this project are unlikely to provide accurate predictions. The project should not be used to make decisions related to lottery participation.
 
+## Visualizations
+![number_frequency](analysis/images/number_frequency.png)
+![Image 2 Description](analysis/images/boxplot_sum_by_decade.png)
+![Image 3 Description](analysis/images/sum_distribution.png)
+![Image 4 Description](analysis/images/pair_heatmap.png)
