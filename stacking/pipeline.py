@@ -57,6 +57,7 @@ xgb_base = MultiOutputTransformer(xgb.XGBRegressor(random_state=42))
 keras_base = KerasTransformer(KerasRegressor(build_fn=create_keras_model2, epochs=100, batch_size=16, verbose=0))
 rf_base = MultiOutputTransformer(RandomForestRegressor(random_state=42))
 
+# Create the base models transformer with the base models
 base_models_transformer = ColumnTransformer(
     transformers=[
         ('xgb', xgb_base, list(range(3))),
@@ -65,14 +66,16 @@ base_models_transformer = ColumnTransformer(
     ],
     remainder='drop'
 )
-
+# create the stacking pipeline
 stacking_pipeline = Pipeline([
     ('base_models', base_models_transformer),
     ('meta_model', LinearRegression())
 ])
 
+# Fit the stacking pipeline
 stacking_pipeline.fit(X_train, y_train)
 
+# Evaluate the model
 final_predictions = stacking_pipeline.predict(X_test)
 mse = mean_squared_error(y_test, final_predictions, multioutput='raw_values')
 print("Stacking Model Mean Squared Error for each number:", mse)
