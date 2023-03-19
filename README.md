@@ -40,6 +40,6 @@ This project is intended for educational purposes only. Predicting lottery numbe
 
 ## Visualizations
 ![number_frequency](analysis/images/number_frequency.png)
-![Image 2 Description](analysis/images/boxplot_sum_by_decade.png)
-![Image 3 Description](analysis/images/sum_distribution.png)
-![Image 4 Description](analysis/images/pair_heatmap.png)
+![boxplot_sum_by_decade](analysis/images/boxplot_sum_by_decade.png)
+![sum_distribution](analysis/images/sum_distribution.png)
+![pair_heatmap](analysis/images/pair_heatmap.png)
