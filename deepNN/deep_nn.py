@@ -49,7 +49,7 @@ X = X.drop(columns=['date'])
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 
-def create_keras_model():
+def create_keras_model2():
     model = Sequential()
     model.add(Dense(64, input_dim=3, activation='relu'))
     model.add(Dense(32, activation='relu'))
@@ -58,7 +58,7 @@ def create_keras_model():
     return model
 
 
-keras_model = KerasRegressor(build_fn=create_keras_model, epochs=100, batch_size=16, verbose=0)
+keras_model = KerasRegressor(build_fn=create_keras_model2, epochs=100, batch_size=16, verbose=0)
 keras_model.fit(X_train, y_train)
 
 # Make predictions and calculate the mean squared error
