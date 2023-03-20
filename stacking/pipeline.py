@@ -2,7 +2,6 @@ from deepNN.deep_nn import *
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
-from sklearn.multioutput import MultiOutputRegressor
 from sklearn.metrics import mean_squared_error
 import xgboost as xgb
 import pandas as pd
