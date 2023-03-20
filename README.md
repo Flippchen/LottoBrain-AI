@@ -1,5 +1,5 @@
 # AI lotto number Prediction
-
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Flippchen/LottoBrain-AI/python.yaml?style=flat-square)  ![GitHub repo size](https://img.shields.io/github/repo-size/Flippchen/LottoBrain-AI?style=flat-square)
 ## Description
 This is a just-for-fun project to experiment with various machine learning models for predicting German Lotto numbers. The main purpose of this project is educational, and it should not be used to make decisions related to lottery participation. The lottery is a random process, and no machine learning model can genuinely predict future lottery numbers with a meaningful degree of accuracy.
 
