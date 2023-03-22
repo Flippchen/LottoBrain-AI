@@ -32,6 +32,7 @@ The project includes various models and techniques to explore the dataset and ex
 2. Runs the web scraper with `python3 web_scraper.py`
 3. Load the dataset and preprocess the data.
 4. Perform exploratory data analysis, visualizations, and time series analysis to understand the dataset.
+5. Apply the feature engineering techniques to create new features.
 5. Apply the K-means clustering algorithm to group similar lottery number combinations. 
 6. Train and evaluate the ensemble stacking model using XGBoost, KerasRegressor, and RandomForestRegressor as base models and a linear regression model as the meta-model.
 
