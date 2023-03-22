@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.linear_model import LinearRegression
 
 # Load the data from csv file
-data = pd.read_csv('lotto_numbers.csv')
+data = pd.read_csv('../lotto_numbers.csv')
 
 # Split the data into input features (X) and target variable (y)
 X = data.drop(['date', 'super_number'], axis=1)
