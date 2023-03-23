@@ -13,6 +13,9 @@ def add_features(data):
     # Add a new feature: average of the six main numbers
     data['avg_numbers'] = data[['number_1', 'number_2', 'number_3', 'number_4', 'number_5', 'number_6']].mean(axis=1)
 
+    # The standard deviation of numbers in each row
+    data['std'] = data[['number_1', 'number_2', 'number_3', 'number_4', 'number_5', 'number_6']].std(axis=1)
+
     return data
 
 
